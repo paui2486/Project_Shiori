@@ -1,0 +1,824 @@
+{
+  "timestamp": "2026-10-08 10:49:38",
+  "summary": {
+    "total": 20,
+    "errors": 0,
+    "latency": {
+      "p50": 16.995,
+      "p95": 628.33,
+      "mean": 79.46350000000001,
+      "min": 8.83,
+      "max": 661.58
+    },
+    "refuse_accuracy": 1.0,
+    "recommend_accuracy": 0.7333333333333333,
+    "false_refuse_rate": 0.26666666666666666,
+    "tokens": {
+      "gemini_in": 39476,
+      "gemini_out": 31443,
+      "openrouter_in": 11299,
+      "openrouter_out": 2144,
+      "total": 84362,
+      "avg_per_query": 4218.1
+    },
+    "by_category": {
+      "exact_title": {
+        "n": 5,
+        "pass": 5,
+        "p50": 19.6
+      },
+      "semantic": {
+        "n": 5,
+        "pass": 4,
+        "p50": 19.26
+      },
+      "longtail": {
+        "n": 3,
+        "pass": 1,
+        "p50": 12.89
+      },
+      "refuse": {
+        "n": 5,
+        "pass": 5,
+        "p50": 15.03
+      },
+      "edge": {
+        "n": 2,
+        "pass": 1,
+        "p50": 20.695
+      }
+    },
+    "node_avg_s": {
+      "plan": 38.42,
+      "local_agent": 0.6915,
+      "web_agent": 0.757,
+      "merge_results": 0.0,
+      "eval_solon": 2.465,
+      "eval_astraea": 29.5175,
+      "eval_muse": 2.3845,
+      "gemini_consolidate": 0.0,
+      "generate": 9.504545454545454,
+      "learn_and_format": 0.0,
+      "refuse": 0.0
+    }
+  },
+  "results": [
+    {
+      "cat": "exact_title",
+      "query": "我想看 GATE 奇幻自衛隊",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.8740000000000001,
+      "scores": {
+        "astraea": 0.9,
+        "solon": 1.0,
+        "muse": 0.68
+      },
+      "rec_titles": [
+        "GATE 奇幻自衛隊",
+        "萌萌侵略者",
+        "幼女戰記",
+        "全職金屬狂潮"
+      ],
+      "latency_s": 19.78,
+      "node_times": {
+        "plan": 5.99,
+        "local_agent": 0.75,
+        "web_agent": 0.47,
+        "merge_results": 0.0,
+        "eval_solon": 3.24,
+        "eval_astraea": 0.51,
+        "eval_muse": 0.31,
+        "gemini_consolidate": 0.0,
+        "generate": 8.51,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2350,
+        "gemini_out": 2090,
+        "openrouter_in": 563,
+        "openrouter_out": 120,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "exact_title",
+      "query": "有沒有 鬼滅之刃",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.634,
+      "scores": {
+        "astraea": 0,
+        "solon": 1.0,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "鬼滅之刃",
+        "化物語",
+        "蘿莉吸血鬼之赤月下的雙子"
+      ],
+      "latency_s": 18.71,
+      "node_times": {
+        "plan": 4.18,
+        "local_agent": 0.45,
+        "web_agent": 0.68,
+        "merge_results": 0.0,
+        "eval_solon": 3.16,
+        "eval_astraea": 0.67,
+        "eval_muse": 0.56,
+        "gemini_consolidate": 0.0,
+        "generate": 8.99,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2506,
+        "gemini_out": 1889,
+        "openrouter_in": 652,
+        "openrouter_out": 133,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "exact_title",
+      "query": "推薦 無職轉生",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.889,
+      "scores": {
+        "astraea": 0.95,
+        "solon": 1.0,
+        "muse": 0.68
+      },
+      "rec_titles": [
+        "無職轉生",
+        "無職轉生～蛇足篇～",
+        "灰與幻想的格林姆迦爾",
+        "在地下城尋求邂逅是否搞錯了什麼"
+      ],
+      "latency_s": 19.6,
+      "node_times": {
+        "plan": 4.98,
+        "local_agent": 0.48,
+        "web_agent": 0.66,
+        "merge_results": 0.0,
+        "eval_solon": 2.64,
+        "eval_astraea": 0.42,
+        "eval_muse": 0.34,
+        "gemini_consolidate": 0.0,
+        "generate": 10.08,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2414,
+        "gemini_out": 1825,
+        "openrouter_in": 610,
+        "openrouter_out": 116,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "exact_title",
+      "query": "Overlord 這部小說講什麼",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.784,
+      "scores": {
+        "astraea": 0.5,
+        "solon": 1.0,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "Overlord",
+        "骸骨武士",
+        "漂流武士"
+      ],
+      "latency_s": 24.53,
+      "node_times": {
+        "plan": 4.46,
+        "local_agent": 0.45,
+        "web_agent": 0.94,
+        "merge_results": 0.0,
+        "eval_solon": 3.03,
+        "eval_astraea": 0.97,
+        "eval_muse": 0.02,
+        "gemini_consolidate": 0.0,
+        "generate": 14.65,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2463,
+        "gemini_out": 2929,
+        "openrouter_in": 612,
+        "openrouter_out": 109,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "exact_title",
+      "query": "藥師少女的獨語",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.784,
+      "scores": {
+        "astraea": 0.5,
+        "solon": 1.0,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "藥師少女的獨語",
+        "小書痴的下剋上",
+        "豬肝記得煮熟再吃"
+      ],
+      "latency_s": 19.57,
+      "node_times": {
+        "plan": 4.11,
+        "local_agent": 0.44,
+        "web_agent": 0.75,
+        "merge_results": 0.0,
+        "eval_solon": 3.02,
+        "eval_astraea": 0.44,
+        "eval_muse": 0.3,
+        "gemini_consolidate": 0.0,
+        "generate": 10.49,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2369,
+        "gemini_out": 1922,
+        "openrouter_in": 603,
+        "openrouter_out": 98,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "主角是自衛隊被捲入異世界的輕小說",
+      "expect": "recommend",
+      "actual": "refuse",
+      "passed": false,
+      "hit": false,
+      "consensus": 0.24599999999999997,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 0.0,
+        "muse": 0.82
+      },
+      "rec_titles": [],
+      "latency_s": 12.03,
+      "node_times": {
+        "plan": 6.41,
+        "local_agent": 0.45,
+        "web_agent": 0.62,
+        "merge_results": 0.0,
+        "eval_muse": 3.34,
+        "eval_solon": 1.21,
+        "eval_astraea": 0.0,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1521,
+        "gemini_out": 1095,
+        "openrouter_in": 597,
+        "openrouter_out": 107,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "主角轉生成史萊姆建立國家",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.9219999999999999,
+      "scores": {
+        "astraea": 1.0,
+        "solon": 1.0,
+        "muse": 0.74
+      },
+      "rec_titles": [
+        "關於我轉生變成史萊姆這檔事",
+        "安逸領主的愉快領地防衛"
+      ],
+      "latency_s": 661.58,
+      "node_times": {
+        "plan": 646.65,
+        "local_agent": 1.06,
+        "web_agent": 0.6,
+        "merge_results": 0.0,
+        "eval_solon": 3.74,
+        "eval_muse": 0.24,
+        "eval_astraea": 0.04,
+        "gemini_consolidate": 0.0,
+        "generate": 9.24,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2442,
+        "gemini_out": 1945,
+        "openrouter_in": 609,
+        "openrouter_out": 112,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "少女露營悠閒日常治癒系",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.8140000000000001,
+      "scores": {
+        "astraea": 0.6,
+        "solon": 1,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "搖曳露營△",
+        "Super Cub",
+        "艾莉莎的機車日記"
+      ],
+      "latency_s": 19.26,
+      "node_times": {
+        "plan": 7.18,
+        "local_agent": 0.53,
+        "web_agent": 0.63,
+        "merge_results": 0.0,
+        "eval_solon": 3.72,
+        "eval_astraea": 0.15,
+        "eval_muse": 0.31,
+        "gemini_consolidate": 0.0,
+        "generate": 6.76,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2224,
+        "gemini_out": 1852,
+        "openrouter_in": 547,
+        "openrouter_out": 127,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "貴族幼女轉生後在戰場上當軍人",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.64,
+      "scores": {
+        "astraea": 0.5,
+        "solon": 0.85,
+        "muse": 0.5
+      },
+      "rec_titles": [
+        "幼女戰記"
+      ],
+      "latency_s": 626.58,
+      "node_times": {
+        "plan": 10.09,
+        "local_agent": 0.45,
+        "web_agent": 0.79,
+        "merge_results": 0.0,
+        "eval_solon": 3.62,
+        "eval_muse": 25.24,
+        "eval_astraea": 578.15,
+        "gemini_consolidate": 0.0,
+        "generate": 8.24,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2391,
+        "gemini_out": 1948,
+        "openrouter_in": 0,
+        "openrouter_out": 0,
+        "openrouter_calls": 0
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "商人與狼神一起旅行的經濟學奇幻",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.634,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 1.0,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "狼與辛香料"
+      ],
+      "latency_s": 16.52,
+      "node_times": {
+        "plan": 4.68,
+        "local_agent": 0.76,
+        "web_agent": 0.57,
+        "merge_results": 0.0,
+        "eval_solon": 3.09,
+        "eval_astraea": 0.31,
+        "eval_muse": 1.0,
+        "gemini_consolidate": 0.0,
+        "generate": 6.12,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2471,
+        "gemini_out": 1501,
+        "openrouter_in": 657,
+        "openrouter_out": 121,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "longtail",
+      "query": "想看時間回溯、改變命運的科幻作品",
+      "expect": "recommend",
+      "actual": "refuse",
+      "passed": false,
+      "hit": false,
+      "consensus": 0.5940000000000001,
+      "scores": {
+        "astraea": 0,
+        "solon": 0.9,
+        "muse": 0.78
+      },
+      "rec_titles": [],
+      "latency_s": 12.89,
+      "node_times": {
+        "plan": 8.04,
+        "local_agent": 0.45,
+        "web_agent": 0.4,
+        "merge_results": 0.0,
+        "eval_solon": 3.32,
+        "eval_muse": 0.0,
+        "eval_astraea": 0.68,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1385,
+        "gemini_out": 1184,
+        "openrouter_in": 535,
+        "openrouter_out": 116,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "longtail",
+      "query": "愛書人轉生到沒有書的世界想自己做書",
+      "expect": "recommend",
+      "actual": "refuse",
+      "passed": false,
+      "hit": false,
+      "consensus": 0.20400000000000001,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 0.0,
+        "muse": 0.68
+      },
+      "rec_titles": [],
+      "latency_s": 11.75,
+      "node_times": {
+        "plan": 5.84,
+        "local_agent": 0.43,
+        "web_agent": 0.83,
+        "merge_results": 0.0,
+        "eval_astraea": 3.58,
+        "eval_solon": 0.01,
+        "eval_muse": 1.05,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1475,
+        "gemini_out": 1042,
+        "openrouter_in": 578,
+        "openrouter_out": 115,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "longtail",
+      "query": "後宮宮廷推理加上藥學知識的故事",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.952,
+      "scores": {
+        "astraea": 1.0,
+        "solon": 1,
+        "muse": 0.84
+      },
+      "rec_titles": [
+        "藥師少女的獨語"
+      ],
+      "latency_s": 17.35,
+      "node_times": {
+        "plan": 5.03,
+        "local_agent": 0.43,
+        "web_agent": 0.77,
+        "merge_results": 0.0,
+        "eval_muse": 3.32,
+        "eval_astraea": 0.01,
+        "eval_solon": 0.14,
+        "gemini_consolidate": 0.0,
+        "generate": 7.64,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2243,
+        "gemini_out": 1807,
+        "openrouter_in": 553,
+        "openrouter_out": 112,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "主角是微積分課本轉生到電鍋裡",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.489,
+      "scores": {
+        "astraea": 0.95,
+        "solon": 0.0,
+        "muse": 0.68
+      },
+      "rec_titles": [],
+      "latency_s": 12.13,
+      "node_times": {
+        "plan": 6.6,
+        "local_agent": 0.44,
+        "web_agent": 0.65,
+        "merge_results": 0.0,
+        "eval_solon": 3.2,
+        "eval_muse": 0.29,
+        "eval_astraea": 0.95,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1473,
+        "gemini_out": 997,
+        "openrouter_in": 589,
+        "openrouter_out": 110,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "請問今天台北的天氣如何",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.354,
+      "scores": {
+        "astraea": 0.4,
+        "solon": 0.0,
+        "muse": 0.78
+      },
+      "rec_titles": [],
+      "latency_s": 15.03,
+      "node_times": {
+        "plan": 5.41,
+        "web_agent": 1.41,
+        "local_agent": 3.94,
+        "merge_results": 0.0,
+        "eval_solon": 2.76,
+        "eval_muse": 1.22,
+        "eval_astraea": 0.3,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1385,
+        "gemini_out": 890,
+        "openrouter_in": 551,
+        "openrouter_out": 130,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "幫我寫一段 Python 快速排序程式碼",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.23399999999999999,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 0.0,
+        "muse": 0.78
+      },
+      "rec_titles": [],
+      "latency_s": 16.64,
+      "node_times": {
+        "plan": 11.39,
+        "local_agent": 0.42,
+        "web_agent": 0.85,
+        "merge_results": 0.0,
+        "eval_solon": 2.58,
+        "eval_muse": 1.37,
+        "eval_astraea": 0.04,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1399,
+        "gemini_out": 1206,
+        "openrouter_in": 555,
+        "openrouter_out": 107,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "asdfghjkl qwertyuiop 12345",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.366,
+      "scores": {
+        "astraea": 0.5,
+        "solon": 0.0,
+        "muse": 0.72
+      },
+      "rec_titles": [],
+      "latency_s": 8.83,
+      "node_times": {
+        "plan": 3.62,
+        "local_agent": 0.43,
+        "web_agent": 0.84,
+        "merge_results": 0.0,
+        "eval_muse": 2.91,
+        "eval_solon": 0.2,
+        "eval_astraea": 0.84,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1491,
+        "gemini_out": 701,
+        "openrouter_in": 613,
+        "openrouter_out": 100,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "股票明天會漲嗎 推薦我幾支飆股",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.384,
+      "scores": {
+        "astraea": 0.5,
+        "solon": 0.0,
+        "muse": 0.78
+      },
+      "rec_titles": [],
+      "latency_s": 15.1,
+      "node_times": {
+        "plan": 9.09,
+        "local_agent": 0.42,
+        "web_agent": 0.84,
+        "merge_results": 0.0,
+        "eval_muse": 3.21,
+        "eval_solon": 0.28,
+        "eval_astraea": 1.27,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1533,
+        "gemini_out": 972,
+        "openrouter_in": 628,
+        "openrouter_out": 98,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "edge",
+      "query": "isekai light novel about a slime",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.9339999999999999,
+      "scores": {
+        "astraea": 1,
+        "solon": 1.0,
+        "muse": 0.78
+      },
+      "rec_titles": [
+        "關於我轉生變成史萊姆這檔事"
+      ],
+      "latency_s": 28.59,
+      "node_times": {
+        "plan": 7.52,
+        "local_agent": 0.52,
+        "web_agent": 0.85,
+        "merge_results": 0.0,
+        "eval_solon": 3.32,
+        "eval_astraea": 0.54,
+        "eval_muse": 2.01,
+        "gemini_consolidate": 0.0,
+        "generate": 13.83,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 2424,
+        "gemini_out": 2619,
+        "openrouter_in": 629,
+        "openrouter_out": 103,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "edge",
+      "query": "吸血鬼",
+      "expect": "recommend",
+      "actual": "refuse",
+      "passed": false,
+      "hit": false,
+      "consensus": 0.554,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 0.95,
+        "muse": 0.58
+      },
+      "rec_titles": [],
+      "latency_s": 12.8,
+      "node_times": {
+        "plan": 7.13,
+        "local_agent": 0.53,
+        "web_agent": 0.99,
+        "merge_results": 0.0,
+        "eval_solon": 3.02,
+        "eval_muse": 0.65,
+        "eval_astraea": 0.48,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 1517,
+        "gemini_out": 1029,
+        "openrouter_in": 618,
+        "openrouter_out": 110,
+        "openrouter_calls": 1
+      },
+      "error": null
+    }
+  ]
+}

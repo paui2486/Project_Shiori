@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-10-08 09:58:46",
+  "summary": {
+    "total": 4,
+    "errors": 0,
+    "latency": {
+      "p50": 24.04,
+      "p95": 28.0715,
+      "mean": 22.0975,
+      "min": 11.76,
+      "max": 28.55
+    },
+    "refuse_accuracy": 1.0,
+    "recommend_accuracy": 1.0,
+    "false_refuse_rate": 0.0,
+    "tokens": {
+      "gemini_in": 0,
+      "gemini_out": 0,
+      "openrouter_in": 2326,
+      "openrouter_out": 447,
+      "total": 2773,
+      "avg_per_query": 693.25
+    },
+    "by_category": {
+      "exact_title": {
+        "n": 1,
+        "pass": 1,
+        "p50": 25.36
+      },
+      "semantic": {
+        "n": 1,
+        "pass": 1,
+        "p50": 22.72
+      },
+      "longtail": {
+        "n": 1,
+        "pass": 1,
+        "p50": 28.55
+      },
+      "refuse": {
+        "n": 1,
+        "pass": 1,
+        "p50": 11.76
+      }
+    },
+    "node_avg_s": {
+      "plan": 7.702500000000001,
+      "local_agent": 0.545,
+      "web_agent": 0.6475,
+      "merge_results": 0.0,
+      "eval_astraea": 0.9375,
+      "eval_muse": 1.75,
+      "eval_solon": 1.8250000000000002,
+      "gemini_consolidate": 0.0,
+      "generate": 11.576666666666666,
+      "learn_and_format": 0.0,
+      "refuse": 0.0
+    }
+  },
+  "results": [
+    {
+      "cat": "exact_title",
+      "query": "我想看 GATE 奇幻自衛隊",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.946,
+      "scores": {
+        "astraea": 1.0,
+        "solon": 1.0,
+        "muse": 0.82
+      },
+      "rec_titles": [
+        "GATE 奇幻自衛隊",
+        "萌萌侵略者",
+        "幼女戰記",
+        "灰與幻想的格林姆迦爾"
+      ],
+      "latency_s": 25.36,
+      "node_times": {
+        "plan": 6.69,
+        "local_agent": 0.76,
+        "web_agent": 0.59,
+        "merge_results": 0.0,
+        "eval_astraea": 3.21,
+        "eval_muse": 1.17,
+        "eval_solon": 2.02,
+        "gemini_consolidate": 0.0,
+        "generate": 10.92,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 0,
+        "gemini_out": 0,
+        "openrouter_in": 592,
+        "openrouter_out": 120,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "semantic",
+      "query": "主角是自衛隊被捲入異世界的輕小說",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.958,
+      "scores": {
+        "astraea": 1.0,
+        "solon": 1.0,
+        "muse": 0.86
+      },
+      "rec_titles": [
+        "GATE 奇幻自衛隊",
+        "萌萌侵略者",
+        "幼女戰記",
+        "漂流武士"
+      ],
+      "latency_s": 22.72,
+      "node_times": {
+        "plan": 7.84,
+        "local_agent": 0.52,
+        "web_agent": 0.63,
+        "merge_results": 0.0,
+        "eval_muse": 3.76,
+        "eval_solon": 0.05,
+        "eval_astraea": 0.15,
+        "gemini_consolidate": 0.0,
+        "generate": 9.76,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 0,
+        "gemini_out": 0,
+        "openrouter_in": 597,
+        "openrouter_out": 108,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "longtail",
+      "query": "想看時間回溯、改變命運的科幻作品",
+      "expect": "recommend",
+      "actual": "recommend",
+      "passed": true,
+      "hit": true,
+      "consensus": 0.8820000000000001,
+      "scores": {
+        "astraea": 0.9,
+        "solon": 0.9,
+        "muse": 0.84
+      },
+      "rec_titles": [
+        "命運石之門",
+        "Re:從零開始的異世界生活"
+      ],
+      "latency_s": 28.55,
+      "node_times": {
+        "plan": 9.46,
+        "local_agent": 0.44,
+        "web_agent": 0.76,
+        "merge_results": 0.0,
+        "eval_solon": 2.99,
+        "eval_muse": 0.56,
+        "eval_astraea": 0.28,
+        "gemini_consolidate": 0.0,
+        "generate": 14.05,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 0,
+        "gemini_out": 0,
+        "openrouter_in": 548,
+        "openrouter_out": 105,
+        "openrouter_calls": 1
+      },
+      "error": null
+    },
+    {
+      "cat": "refuse",
+      "query": "主角是微積分課本轉生到電鍋裡",
+      "expect": "refuse",
+      "actual": "refuse",
+      "passed": true,
+      "hit": null,
+      "consensus": 0.186,
+      "scores": {
+        "astraea": 0.0,
+        "solon": 0.0,
+        "muse": 0.62
+      },
+      "rec_titles": [],
+      "latency_s": 11.76,
+      "node_times": {
+        "plan": 6.82,
+        "local_agent": 0.46,
+        "web_agent": 0.61,
+        "merge_results": 0.0,
+        "eval_solon": 2.24,
+        "eval_muse": 1.51,
+        "eval_astraea": 0.11,
+        "gemini_consolidate": 0.0,
+        "refuse": 0.0,
+        "learn_and_format": 0.0
+      },
+      "tokens": {
+        "gemini_in": 0,
+        "gemini_out": 0,
+        "openrouter_in": 589,
+        "openrouter_out": 114,
+        "openrouter_calls": 1
+      },
+      "error": null
+    }
+  ]
+}

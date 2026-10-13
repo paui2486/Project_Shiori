@@ -1,0 +1,24 @@
+# 機密：API Key 只能在執行期透過 docker-compose env_file 注入，絕不能打包進 image
+.env
+.env.*
+
+# 本機虛擬環境 / 快取（macOS binary 與容器不相容，且體積龐大）
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# 資料由 docker-compose volume (./data:/app/data) 掛載，不打包進 image
+data/
+
+# 開發用測試腳本與輸出
+test_*.py
+test_query_result.txt
+
+# 文件與 Docker 自身設定
+*.md
+depiction.txt
+Dockerfile
+docker-compose.yml
+.dockerignore
+.git/

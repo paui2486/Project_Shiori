@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-10-08 12:01:57",
+  "summary": {
+    "total": 1,
+    "errors": 1,
+    "latency": {
+      "p50": 75.35,
+      "p95": 75.35,
+      "mean": 75.35,
+      "min": 75.35,
+      "max": 75.35
+    },
+    "refuse_accuracy": NaN,
+    "recommend_accuracy": 0.0,
+    "false_refuse_rate": 0.0,
+    "tokens": {
+      "gemini_in": 0,
+      "gemini_out": 0,
+      "openrouter_in": 0,
+      "openrouter_out": 0,
+      "total": 0,
+      "avg_per_query": 0.0
+    },
+    "by_category": {
+      "exact_title": {
+        "n": 1,
+        "pass": 0,
+        "p50": 75.35
+      }
+    },
+    "node_avg_s": {}
+  },
+  "results": [
+    {
+      "cat": "exact_title",
+      "query": "我想看 GATE 奇幻自衛隊",
+      "expect": "recommend",
+      "actual": "error",
+      "passed": false,
+      "hit": false,
+      "consensus": null,
+      "scores": {
+        "astraea": null,
+        "solon": null,
+        "muse": null
+      },
+      "rec_titles": [],
+      "latency_s": 75.35,
+      "node_times": {
+        "plan": 20.01,
+        "web_agent": 0.01
+      },
+      "tokens": {
+        "gemini_in": 0,
+        "gemini_out": 0,
+        "openrouter_in": 0,
+        "openrouter_out": 0,
+        "openrouter_calls": 0
+      },
+      "error": "GoogleGenerativeAIError: Error embedding content: Timeout of 60.0s exceeded, last exception: 503 DNS resolution failed for generativelanguage.goo"
+    }
+  ]
+}

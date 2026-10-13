@@ -1,0 +1,21 @@
+📍 第一部分：目前專案進度總結 (MVP Phase 達成)目前系統已在原型階段完成以下核心功能，驗證了「進化型 RAG」的技術可行性：混合檢索架構 (Hybrid Search) 建立：成功整合 SQLite（精確書名與標籤匹配）與 Chroma + BGE-M3（語義相似度匹配），解決了輕小說長尾查詢與變體書名的痛點。自我進化迴圈 (Self-Learning Loop) 跑通：實作了「本地未命中 $\rightarrow$ Google Search 聯網 $\rightarrow$ LLM 解析萃取 $\rightarrow$ 寫入本地資料庫與向量索引」的自動化流程。Prompt 邏輯優化：透過雙重角色（圖書館員 + 推薦員）設定，解決了「推薦偏差」，確保精確命中的作品優先顯示。基礎 UI 與資料庫管理：透過 Gradio 建立了對話介面與視覺化的資料庫管理後台。
+📄 第二部分：線下版開發規格書 (Handoff to Antigravity)專案名稱：進化型輕小說 RAG 推薦系統 (Offline Edition)核心技術棧LLM 推理：Gemini 3 Flash (透過 API 呼叫)Embedding 模型：BAAI/bge-m3 (本地 GPU 推理)關聯式資料庫：SQLite (.db 檔案)向量資料庫：ChromaDB (本地持久化存儲)容器化技術：Docker & Docker Compose前端與 API：Gradio1. 系統架構與環境隔離設計為確保在不同硬體環境（如 AMD AI MAX 395 128G 或 Apple Silicon M3 16GB）上皆能順利運行，系統將採用 Docker 進行全面隔離。金鑰與配置管理：嚴禁將 API Key 寫入程式碼。統一使用 .env 檔案管理環境變數，並透過 Docker Compose 動態載入。資料持久化 (Data Persistence)：SQLite 資料庫檔案與 Chroma 索引資料夾必須透過 Docker Volumes (掛載卷) 映射至宿主機 (Host)，確保容器重啟或重建時資料不遺失。硬體加速 (Hardware Acceleration)：AMD 平台：需在 Docker 中配置 ROCm 支援，使 sentence-transformers (BGE-M3) 能調用 AMD GPU 進行高速 Embedding。Apple Silicon (M3) 平台：需確保 PyTorch 支援 MPS (Metal Performance Shaders) 加速。2. 專案目錄結構規範 (Directory Structure)建議 Antigravity 團隊依照以下結構建立 Repo：Plaintextlight-novel-rag-system/
+├── app/
+│   ├── main.py                 # Gradio UI 啟動入口
+│   ├── core/
+│   │   ├── rag_engine.py       # 混合檢索與核心 RAG 邏輯
+│   │   ├── search_tools.py     # Google Search API 封裝
+│   │   └── models.py           # Pydantic 資料模型定義
+│   └── database/
+│       └── db_manager.py       # SQLite 與 Chroma 初始化/增量更新邏輯
+├── data/                       # Docker Volume 掛載點 (勿加入 Git)
+│   ├── db/
+│   │   └── light_novel.db      # SQLite 資料庫
+│   └── chroma/                 # Chroma 向量資料夾
+├── config/
+│   └── .env.example            # 環境變數範本檔
+├── Dockerfile                  # 容器建置腳本
+├── docker-compose.yml          # 服務編排設定
+└── requirements.txt            # Python 依賴清單
+3. 核心模組開發規範安全與配置模組 (.env)：需包含 GOOGLE_API_KEY、GOOGLE_CSE_ID 以及模型環境設定（例如 CUDA_VISIBLE_DEVICES 或 HUGGINGFACE_HUB_CACHE）。Embedding 初始化邏輯 (db_manager.py)：保留目前的「增量更新 (Incremental Update)」邏輯。系統啟動時，只需對 SQLite 中存在但 Chroma 中不存在的新資料執行 BGE-M3 向量化，大幅縮減啟動時間。等冪性寫入 (Idempotency)：寫入 SQLite 時維持 INSERT OR IGNORE，寫入 Chroma 時明確指定 ids (以書名為主鍵)，防止重複推薦。4. 部署與啟動流程 (Deployment Steps)交接給 Antigravity 後，標準的啟動流程應簡化為以下三步：複製 .env.example 為 .env 並填入 Google API 金鑰。執行容器建置與啟動指令：Bashdocker-compose up -d --build
+開啟瀏覽器訪問 http://localhost:7860 進入 Gradio 介面。

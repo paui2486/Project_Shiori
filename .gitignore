@@ -1,0 +1,31 @@
+# 機密與環境設定檔
+.env
+.env.*
+!.env.example
+
+# Python 虛擬環境
+.venv/
+venv/
+env/
+ENV/
+
+# Byte-compiled / 快取檔案
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db
+
+# 執行期產生之資料庫與向量索引（避免將本機大型二進位資料庫提交至 Git）
+data/chroma/
+data/db/
+data/light_novel.db
+data/hf_cache/
+*.db
+*.sqlite3
+
+# 測試輸出與日誌
+test_query_result.txt
